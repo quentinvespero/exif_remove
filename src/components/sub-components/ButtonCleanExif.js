@@ -2,7 +2,7 @@ import React from 'react'
 
 const ButtonCleanExif = ({onClickProps}) => {
     return (
-        <button className='buttonCleanExif' onClick={onClickProps}>clean exif</button>
+        <button className='buttonType1' onClick={onClickProps}>clean exif</button>
     )
 }
 

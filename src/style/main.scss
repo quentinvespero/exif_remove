@@ -77,8 +77,6 @@ p{
 }
 button{
     font-family: 'barlow semi condensed';
-    @include font(1.1rem,$color1,300,none);
-    border-radius: .4rem;
 }
 
 .divider{
@@ -87,4 +85,25 @@ button{
     @include usualSpaces(2rem,1rem,0,0);
     height: .15rem;
     width: 10rem;
+}
+
+//buttons
+.buttonType1{
+    @include font(1.1rem,$color1,300,none);
+    @include usualSpaces(1rem, 1rem, .8rem, .8rem);
+    border-radius: .4rem;
+    background: $color5;
+    border: none;
+    box-shadow: 0rem 0.4rem 0rem 0.5rem $color6;
+    transition: ease-in-out .15s;
+    cursor: pointer;
+}
+.buttonType1:hover{
+    box-shadow: 0rem 0.2rem 0rem 0.4rem $color6;
+    transform: scale(0.98) translateY(0.4rem);
+}
+.buttonType1:active{
+    box-shadow: 0rem 0.1rem 0rem 0.4rem $color6;
+    transform: scale(0.95) translateY(0.5rem);
+    filter: brightness(.9);
 }
