@@ -2,6 +2,9 @@
 $color1 : #d8d7ca;
 $color2 : #436464;
 $color3 : #f1f1f1;
+$color4 : #f1f1f132;
+$color5 : #9862a7;
+$color6 : #6b3e70;
 
 //main font
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Itim&family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -34,7 +37,7 @@ body{
     background-color: $color2;
     font-family: 'barlow semi condensed';
     @include font(1.2rem,$color1,300,none);
-    @include usualSpaces(3rem,3rem,0 ,0)
+    @include usualSpaces(3rem,3rem,0 ,0);
 }
 li{
     list-style-type: none;
@@ -68,4 +71,20 @@ h5{
 }
 h6{
     @include font(1.25rem,$color1,300,none);
+}
+p{
+    margin: 0;
+}
+button{
+    font-family: 'barlow semi condensed';
+    @include font(1.1rem,$color1,300,none);
+    border-radius: .4rem;
+}
+
+.divider{
+    background: $color4;
+    border-radius: .4rem;
+    @include usualSpaces(2rem,1rem,0,0);
+    height: .15rem;
+    width: 10rem;
 }

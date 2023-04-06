@@ -1,0 +1,18 @@
+.buttonCleanExif{
+    @include usualSpaces(1rem, 1rem, .8rem, .8rem);
+    background: $color5;
+    border: none;
+    box-shadow: 0rem 0.4rem 0rem 0.5rem $color6;
+    border-radius: .4rem;
+    transition: ease-in-out .15s;
+    cursor: pointer;
+}
+.buttonCleanExif:hover{
+    box-shadow: 0rem 0.2rem 0rem 0.4rem $color6;
+    transform: scale(0.98) translateY(0.4rem);
+}
+.buttonCleanExif:active{
+    box-shadow: 0rem 0.1rem 0rem 0.4rem $color6;
+    transform: scale(0.95) translateY(0.5rem);
+    filter: brightness(.8);
+}
