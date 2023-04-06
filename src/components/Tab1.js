@@ -5,17 +5,22 @@ import ButtonCleanExif from './sub-components/ButtonCleanExif'
 
 const Tab1 = () => {
 
-    const [showComponent,setShowComponent] = useState(false)
+    const [showComponent,setShowComponent] = useState(true)
+    const [showComponent2,setShowComponent2] = useState(true)
 
+    const handleFileImport = (e) =>{
+        console.log(e.target)
+        setShowComponent(false)
+    }
     const handleButtonClick = (e) =>{
         console.log(e.target)
-        setShowComponent(true)
+        setShowComponent(false)
     }
 
     return (
         <div className='componentTab1'>
-            <ImportingFilesInterface/>
-            {showComponent && <DisplayFilesInterface/>}
+            {showComponent && <ImportingFilesInterface/>}
+            {!showComponent2 && <DisplayFilesInterface/>}
             <ButtonCleanExif onClickProps={handleButtonClick}/>
         </div>
     )

@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useDropzone } from 'react-dropzone'
 
 const ImportingFilesInterface = () => {
+
+    const onDrop = useCallback(acceptedFiles =>{
+
+    },[])
+
+    const {getRootProps,getInputProps,isDragActive} = useDropzone({onDrop})
+
     return (
         <div className='ImportingFilesInterface'>
             {/* <button className='fileImport'>importer vos fichiers ici</button> */}
