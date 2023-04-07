@@ -15,7 +15,7 @@ const ImportingFilesInterface = () => {
                     }
                 }
                 else{
-                    console.log('the file : '+file.name+'is a bit too big unfortunately..')
+                    console.log('the file : '+file.name+' is a bit too big unfortunately..')
                 }
             }
         }
