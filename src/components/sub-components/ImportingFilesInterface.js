@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useDropzone } from 'react-dropzone'
 
 const ImportingFilesInterface = () => {
@@ -18,6 +18,9 @@ const ImportingFilesInterface = () => {
                     console.log('the file : '+file.name+'is a bit too big unfortunately..')
                 }
             }
+        }
+        else{
+            console.log("aw unfortunately it seems like you're trying to add too many files at a time. Not more than 10 are allowed for now..")
         }
     }
 
