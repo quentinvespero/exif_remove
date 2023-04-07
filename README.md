@@ -1,4 +1,4 @@
-# exif_remove
+# Remove EXIF app
 small react app for viewing/removing exif datas from files
 
 not working yet at the moment.
