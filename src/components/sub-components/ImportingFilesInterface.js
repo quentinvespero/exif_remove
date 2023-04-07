@@ -3,12 +3,18 @@ import { useDropzone } from 'react-dropzone'
 
 const ImportingFilesInterface = () => {
 
-    const onDrop = (uploadedFile) =>{
-        let uploadedFiles = uploadedFile
+    const onDrop = (acceptedFiles) =>{
+
+        let uploadedFiles = acceptedFiles
+
         console.log(uploadedFiles)
+        
         if (uploadedFiles.length < 10) {
+
             for (let index = 0; index < uploadedFiles.length; index++) {
+
                 const file = uploadedFiles[index]
+
                 if (file.size < 5000000) {
                     if (file.type.includes('image') || file.type.includes('text') || file.name.includes('png')) {
                         console.log('welcome onboard')
