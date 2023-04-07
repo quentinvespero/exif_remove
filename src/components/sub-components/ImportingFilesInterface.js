@@ -24,7 +24,9 @@ const ImportingFilesInterface = () => {
         }
     }
 
-    const { getRootProps, getInputProps } = useDropzone({ onDrop })
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+
+    console.log(useDropzone())
 
     const importFiles = (e) =>{
         console.log(e.target)
@@ -32,7 +34,7 @@ const ImportingFilesInterface = () => {
 
     return (
         <div className='ImportingFilesInterface'>
-            <div className='dropFileArea' {...getRootProps()}>
+            <div style={isDragActive ? {background:'#ffffff48',transform:'scale(0.97)'}: {}} className='dropFileArea' {...getRootProps()}>
                 <input {...getInputProps()} />
                 <p>drop your files here</p>
                 <div className='divider'></div>
