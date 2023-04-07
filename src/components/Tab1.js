@@ -22,7 +22,6 @@ const Tab1 = () => {
         <div className='componentTab1'>
             {showImportingFileArea && <ImportingFilesInterface/>}
             {showDisplayFilesInterface && <DisplayFilesInterface/>}
-            {/* {showDisplayFilesInterface && <DisplayFilesInterface/>} */}
             {showButtonCleanExif && <ButtonCleanExif onClickProps={handleButtonClick}/>}
         </div>
     )
