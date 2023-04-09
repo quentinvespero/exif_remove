@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 const ImportingFilesInterface = () => {
 
-    const onDrop = (acceptedFiles) =>{
+    const [showConfirmationButton, setshowConfirmationButton] = useState(false)
 
-        let uploadedFiles = acceptedFiles
+    const onFileDrop = (uploadedFiles) =>{
 
         console.log(uploadedFiles)
         
+        // verifying that there are not much than 10 files
         if (uploadedFiles.length < 10) {
 
+            // iterate over each file
             for (let index = 0; index < uploadedFiles.length; index++) {
 
                 const file = uploadedFiles[index]
 
+                // verifying files are not over 5mo
                 if (file.size < 5000000) {
+
+                    // verifying that the type of the file is accepted
                     if (file.type.includes('image') || file.type.includes('text') || file.name.includes('png')) {
                         console.log('welcome onboard')
                     }
@@ -30,7 +35,7 @@ const ImportingFilesInterface = () => {
         }
     }
 
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onFileDrop })
 
     console.log(useDropzone())
 
@@ -47,7 +52,7 @@ const ImportingFilesInterface = () => {
                 <p className='text2'>{"(or click to add some)"}</p>
             </div>
             <br />
-            <button className='buttonType1' onClick={importFiles}>{'confirmation'}</button>
+            {showConfirmationButton && <button className='buttonType1' onClick={importFiles}>{'confirmation'}</button>}
         </div>
     )
 }
