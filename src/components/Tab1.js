@@ -10,8 +10,9 @@ const Tab1 = () => {
     const [showButtonCleanExif,setShowButtonCleanExif] = useState(false)
 
     const handleFileImport = (e) =>{
-        console.log(e.target)
+        // console.log(e)
         setShowImportingFileArea(false)
+        setShowDisplayFilesInterface(true)
     }
     const handleButtonClick = (e) =>{
         console.log(e.target)
@@ -20,7 +21,7 @@ const Tab1 = () => {
 
     return (
         <div className='componentTab1'>
-            {showImportingFileArea && <ImportingFilesInterface/>}
+            {showImportingFileArea && <ImportingFilesInterface onImportFileProps={handleFileImport}/>}
             {showDisplayFilesInterface && <DisplayFilesInterface/>}
             {showButtonCleanExif && <ButtonCleanExif onClickProps={handleButtonClick}/>}
         </div>
