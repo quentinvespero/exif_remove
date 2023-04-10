@@ -3,7 +3,7 @@ import React from 'react'
 const DisplayFilesInterface = () => {
     return (
         <div>
-            <p>TEEEEEEEEEEST</p>
+            <p>display files interface :3</p>
         </div>
     )
 }

@@ -1,0 +1,8 @@
+.app{
+    @include centerElement();
+    flex-direction: column;
+}
+.appTitle{
+    @include centerElement();
+    flex-direction: column;
+}
