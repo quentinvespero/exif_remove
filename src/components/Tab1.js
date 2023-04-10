@@ -15,7 +15,7 @@ const Tab1 = () => {
     // variable for the text in the button
     const [buttonText, setButtonText] = useState('')
 
-    // function for the text to display on the button
+    // follow somes variables state to display / hide elements
     useEffect(() =>{
         if (showImportingFilesInterface || showDisplayFilesInterface) {
             setButtonText('confirmation')
@@ -26,6 +26,11 @@ const Tab1 = () => {
         else setButtonText('?')
     },[showDisplayFilesInterface, showImportingFilesInterface, filesConfirmed])
     
+    // follow files variable state
+    useEffect(()=>{
+        if (files.length > 0) console.log(files)
+    },[files])
+    
     // function to handle file import.
     const handleFileImport = (importedFiles) =>{
 
@@ -35,11 +40,10 @@ const Tab1 = () => {
 
         // handle files
         setFiles(importedFiles)
-        console.log(files)
     }
 
     // function for handling which action to perform when pressing the button
-    const handleButtonClick = (e) =>{
+    const handleButtonClick = () =>{
         // console.log(e.target)
 
         if (buttonText === 'confirmation') {
@@ -58,7 +62,7 @@ const Tab1 = () => {
     return (
         <div className='componentTab1'>
             {showImportingFilesInterface && <ImportingFilesInterface onImportFiles={ handleFileImport }/>}
-            {showDisplayFilesInterface && <DisplayFilesInterface files={ filesConfirmed }/>}
+            {showDisplayFilesInterface && <DisplayFilesInterface uploadedFiles={ files }/>}
             {showButton && <Button onClickProps={ handleButtonClick } text={ buttonText }/>}
         </div>
     )
