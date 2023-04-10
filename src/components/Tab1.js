@@ -9,6 +9,7 @@ const Tab1 = () => {
     const [showImportingFilesInterface,setShowImportingFilesInterface] = useState(true)
     const [showDisplayFilesInterface,setShowDisplayFilesInterface] = useState(false)
     const [showButton,setShowButton] = useState(false)
+    const [files,setFiles] = useState([])
     const [filesConfirmed,setFilesConfirmed] = useState(false)
 
     // variable for the text in the button
@@ -26,25 +27,28 @@ const Tab1 = () => {
     },[showDisplayFilesInterface, showImportingFilesInterface, filesConfirmed])
     
     // function to handle file import.
-    const handleFileImport = () =>{
+    const handleFileImport = (importedFiles) =>{
 
+        // set display interface
         setShowImportingFilesInterface(false)
         setShowDisplayFilesInterface(true)
+
+        // handle files
+        setFiles(importedFiles)
+        console.log(files)
     }
 
     // function for handling which action to perform when pressing the button
     const handleButtonClick = (e) =>{
-        console.log(e.target)
+        // console.log(e.target)
 
         if (buttonText === 'confirmation') {
             
             // uploading file
-            setFilesConfirmed(true)
         }
         else if (buttonText === 'clean EXIF'){
             
             // clean exif of the files
-
         }
         else {
             console.log('an error occured')
@@ -53,8 +57,8 @@ const Tab1 = () => {
 
     return (
         <div className='componentTab1'>
-            {showImportingFilesInterface && <ImportingFilesInterface onImportFileProps={ handleFileImport }/>}
-            {showDisplayFilesInterface && <DisplayFilesInterface/>}
+            {showImportingFilesInterface && <ImportingFilesInterface onImportFiles={ handleFileImport }/>}
+            {showDisplayFilesInterface && <DisplayFilesInterface files={ filesConfirmed }/>}
             {showButton && <Button onClickProps={ handleButtonClick } text={ buttonText }/>}
         </div>
     )

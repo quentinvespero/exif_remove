@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
-const ImportingFilesInterface = ({onImportFileProps}) => {
+const ImportingFilesInterface = ({ onImportFiles }) => {
 
     // const [showConfirmationButton, setshowConfirmationButton] = useState(false)
 
     const onDrop = (uploadedFiles) =>{
 
-        console.log(uploadedFiles)
+        // console.log(uploadedFiles)
         
         // verifying that there are not much than 10 files
         if (uploadedFiles.length < 10) {
@@ -28,7 +28,7 @@ const ImportingFilesInterface = ({onImportFileProps}) => {
                         // setshowConfirmationButton(true)
 
                         // toggle the displays in the parent component
-                        onImportFileProps()
+                        onImportFiles(uploadedFiles)
                     }
                 }
                 else{
@@ -46,7 +46,7 @@ const ImportingFilesInterface = ({onImportFileProps}) => {
     // console.log(useDropzone())
 
     const importFiles = (e) =>{
-        console.log(e.target)
+        // console.log(e.target)
     }
 
     return (
