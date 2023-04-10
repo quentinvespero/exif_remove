@@ -25,6 +25,7 @@ const Tab1 = () => {
         else setButtonText('?')
     },[showDisplayFilesInterface, showImportingFilesInterface, filesConfirmed])
     
+    // function to handle file import.
     const handleFileImport = () =>{
 
         setShowImportingFilesInterface(false)
@@ -43,7 +44,7 @@ const Tab1 = () => {
         else if (buttonText === 'clean EXIF'){
             
             // clean exif of the files
-            
+
         }
         else {
             console.log('an error occured')

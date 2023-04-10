@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone'
 
 const ImportingFilesInterface = ({onImportFileProps}) => {
 
-    const [showConfirmationButton, setshowConfirmationButton] = useState(false)
+    // const [showConfirmationButton, setshowConfirmationButton] = useState(false)
 
     const onDrop = (uploadedFiles) =>{
 
@@ -25,7 +25,7 @@ const ImportingFilesInterface = ({onImportFileProps}) => {
                         console.log('welcome onboard')
                         
                         // show button to confirm the files we want to use
-                        setshowConfirmationButton(true)
+                        // setshowConfirmationButton(true)
 
                         // toggle the displays in the parent component
                         onImportFileProps()
@@ -43,7 +43,7 @@ const ImportingFilesInterface = ({onImportFileProps}) => {
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
-    console.log(useDropzone())
+    // console.log(useDropzone())
 
     const importFiles = (e) =>{
         console.log(e.target)
@@ -58,7 +58,7 @@ const ImportingFilesInterface = ({onImportFileProps}) => {
                 <p className='text2'>{"(or click to add some)"}</p>
             </div>
             <br />
-            {showConfirmationButton && <button className='buttonType1' onClick={importFiles}>{'confirmation'}</button>}
+            {/* {showConfirmationButton && <button className='buttonType1' onClick={importFiles}>{'confirmation'}</button>} */}
         </div>
     )
 }
