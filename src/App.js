@@ -64,7 +64,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className="app">
             <h1 className='appTitle'>App</h1>
             {showImportingFilesInterface && <ImportingFilesInterface onImportFiles={ handleFileImport }/>}
             {showDisplayFilesInterface && <DisplayFilesInterface uploadedFiles={ files }/>}
