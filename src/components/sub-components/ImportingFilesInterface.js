@@ -7,8 +7,6 @@ const ImportingFilesInterface = ({onImportFileProps}) => {
 
     const onDrop = (uploadedFiles) =>{
 
-        // let uploadedFiles = acceptedFiles
-
         console.log(uploadedFiles)
         
         // verifying that there are not much than 10 files
