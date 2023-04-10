@@ -17,26 +17,30 @@ const Tab1 = () => {
 
     // follow somes variables state to display / hide elements
     useEffect(() =>{
-        if (showImportingFilesInterface || showDisplayFilesInterface) {
-            setButtonText('confirmation')
+        if (showImportingFilesInterface) {
+            setButtonText('confirm')
         }
-        else if (filesConfirmed) {
-            setButtonText('clean EXIF')
+        else if (filesConfirmed || showDisplayFilesInterface) {
+            setButtonText('add more files')
         }
         else setButtonText('?')
     },[showDisplayFilesInterface, showImportingFilesInterface, filesConfirmed])
     
     // follow files variable state
     useEffect(()=>{
-        if (files.length > 0) console.log(files)
+        if (files.length > 0) {
+            console.log(files)
+            
+        }
     },[files])
     
     // function to handle file import.
     const handleFileImport = (importedFiles) =>{
 
         // set display interface
-        setShowImportingFilesInterface(false)
-        setShowDisplayFilesInterface(true)
+        // setShowImportingFilesInterface(false)
+        // setShowDisplayFilesInterface(true)
+        setShowButton(true)
 
         // handle files
         setFiles(importedFiles)

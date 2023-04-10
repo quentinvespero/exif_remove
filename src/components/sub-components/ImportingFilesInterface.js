@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 const ImportingFilesInterface = ({ onImportFiles }) => {
 
-    // const [showConfirmationButton, setshowConfirmationButton] = useState(false)
+    const [curatedFiles,setCuratedFiles] = useState([])
+
+    useEffect(()=>{
+        if (curatedFiles.length > 0) {
+            onImportFiles(curatedFiles)
+        }
+    },[curatedFiles])
 
     const onDrop = (uploadedFiles) =>{
 
@@ -22,13 +28,9 @@ const ImportingFilesInterface = ({ onImportFiles }) => {
 
                     // verifying that the type of the file is accepted
                     if (file.type.includes('image') || file.type.includes('text') || file.name.includes('png')) {
-                        console.log('welcome onboard')
-                        
-                        // show button to confirm the files we want to use
-                        // setshowConfirmationButton(true)
 
-                        // toggle the displays in the parent component
-                        onImportFiles(uploadedFiles)
+                        // importing curated files
+                        setCuratedFiles(previouslyCuratedFiles => [...previouslyCuratedFiles, file])
                     }
                 }
                 else{
