@@ -35,7 +35,7 @@ function App() {
     // follow files variable state
     useEffect(()=>{
         if (files.length > 0) {
-            // console.log(files)
+            console.log(files)
             
         }
     },[files])

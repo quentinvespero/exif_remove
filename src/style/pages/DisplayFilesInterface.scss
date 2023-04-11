@@ -2,3 +2,8 @@
     @include centerElement();
     flex-direction: column;
 }
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}

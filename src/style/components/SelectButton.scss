@@ -1,0 +1,16 @@
+.selectButton{
+    @include usualSpaces(1rem,1rem,1rem,1rem);
+    display: flex;
+    border: .2rem solid $color4;
+    border-radius: 1rem;
+    background: $color4;
+    transition: ease-in-out .15s;
+}
+.selectButton:hover{
+    border: .2rem solid #ffffff48;
+    background: #ffffff48;
+    transform: scale(0.98);
+}
+.selectButton:active{
+    transform: scale(0.96);
+}

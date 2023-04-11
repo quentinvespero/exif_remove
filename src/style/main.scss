@@ -116,13 +116,13 @@ button{
     border: .2rem solid $color4;
     border-radius: 1rem;
     background: $color4;
-    height: 20rem;
-    width: 30rem;
-    transition: ease-in-out .15s;
+    // height: 20rem;
+    // width: 30rem;
+    transition: ease-in-out .2s;
     flex-direction: column;
     justify-content: unset;
 }
 .mainPanel:hover{
-    border: .2rem solid #ffffff48;
-    background: #ffffff48;
+    border: .2rem solid #ffffff5a;
+    // background: #ffffff48;
 }
