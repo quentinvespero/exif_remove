@@ -78,6 +78,10 @@ p{
 button{
     font-family: 'barlow semi condensed';
 }
+input{
+    // all: unset;
+    margin: 0;
+}
 
 .divider{
     background: $color4;

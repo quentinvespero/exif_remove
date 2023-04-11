@@ -17,8 +17,8 @@ const TileConfirmFile = ({ file }) => {
                 <p>{file.name}</p>
 
                 {/* // we convert the size from bytes to MB, while rounding the numbers with 2 numbers after comma */}
-                <p>{((file.size)/1000000).toFixed(2) +' Mb'}</p>
                 <p>{'last modifications : '+(file.lastModified)}</p>
+                <p>{((file.size)/1000000).toFixed(2) +' Mb'}</p>
             </div>
 
         </div>
