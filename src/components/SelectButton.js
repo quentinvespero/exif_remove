@@ -1,10 +1,10 @@
 import React from 'react'
 import TileConfirmFile from './TileConfirmFile'
 
-const SelectButton = () => {
+const SelectButton = ({ filePath }) => {
     return (
         <div className='selectButton'>
-            <TileConfirmFile/>
+            <TileConfirmFile nameFile={filePath}/>
         </div>
     )
 }

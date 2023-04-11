@@ -6,12 +6,16 @@ const DisplayFilesInterface = ({ uploadedFiles }) => {
 
     return (
         <div className='displayFilesInterface'>
-            <p>display files interface :3</p>
-            {uploadedFiles.map(file=>{
-                // console.log(file)
-                <div key={file.size} className="fileTile">{file.path}</div>
-            })}
-            <SelectButton/>
+            <div className="mainPanel">
+                <p>display files interface :3</p>
+                {uploadedFiles.map((file,index)=>{
+                    // console.log(file)
+                    // <div key={file.size} className="fileTile">{file.path}</div>
+                    <SelectButton key={index} filePath={file.path}/>
+                })}
+            </div>
+            <Button/>
+            <Button/>
         </div>
     )
 }

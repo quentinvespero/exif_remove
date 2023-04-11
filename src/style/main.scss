@@ -107,3 +107,22 @@ button{
     transform: scale(0.95) translateY(0.5rem);
     filter: brightness(.9);
 }
+
+//interface
+.mainPanel{
+    @include centerElement();
+    flex-direction: column;
+    @include usualSpaces(1rem, 1rem, 1rem, 1rem);
+    border: .2rem solid $color4;
+    border-radius: 1rem;
+    background: $color4;
+    height: 20rem;
+    width: 30rem;
+    transition: ease-in-out .15s;
+    flex-direction: column;
+    justify-content: unset;
+}
+.mainPanel:hover{
+    border: .2rem solid #ffffff48;
+    background: #ffffff48;
+}

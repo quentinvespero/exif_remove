@@ -1,28 +1,4 @@
-.ImportingFilesInterface{
+.displayFilesInterface{
     @include centerElement();
     flex-direction: column;
-}
-
-.dropFileArea{
-    @include usualSpaces(1rem, 1rem, 1rem, 1rem);
-    border: .2rem solid $color4;
-    border-radius: 1rem;
-    background: $color4;
-    height: 15rem;
-    width: 20rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: ease-in-out .15s;
-    flex-direction: column;
-    cursor: pointer;
-}
-.dropFileArea:hover{
-    border: .2rem solid #ffffff48;
-    background: #ffffff48;
-    transform: scale(0.97);
-}
-
-.text2{
-    font-size: .9rem;
 }

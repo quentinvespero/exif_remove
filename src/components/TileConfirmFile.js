@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TileConfirmFile = () => {
+const TileConfirmFile = (nameFile) => {
     return (
         <div className='tileConfirmFile'>
             
