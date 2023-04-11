@@ -5,9 +5,12 @@ import Button from './components/Button'
 
 function App() {
 
-    // variables relative to the display interface
+    // variables relative to show/hide interface pages
     const [showImportingFilesInterface,setShowImportingFilesInterface] = useState(true)
     const [showDisplayFilesInterface,setShowDisplayFilesInterface] = useState(false)
+    const [showEditFilesInterface, setShowEditFilesInterface] = useState(false)
+
+    // variables relative to show/hide interface buttons
     const [showButton,setShowButton] = useState(false)
     const [files,setFiles] = useState([])
     const [filesConfirmed,setFilesConfirmed] = useState(false)
@@ -20,8 +23,11 @@ function App() {
         if (showImportingFilesInterface) {
             setButtonText('confirm')
         }
-        else if (filesConfirmed || showDisplayFilesInterface) {
+        else if (showDisplayFilesInterface) {
             setButtonText('add more files')
+        }
+        else if (showEditFilesInterface) {
+            setButtonText('clean exif !')
         }
         else setButtonText('?')
     },[showDisplayFilesInterface, showImportingFilesInterface, filesConfirmed])
@@ -29,7 +35,7 @@ function App() {
     // follow files variable state
     useEffect(()=>{
         if (files.length > 0) {
-            console.log(files)
+            // console.log(files)
             
         }
     },[files])
@@ -38,8 +44,8 @@ function App() {
     const handleFileImport = (importedFiles) =>{
 
         // set display interface
-        // setShowImportingFilesInterface(false)
-        // setShowDisplayFilesInterface(true)
+        setShowImportingFilesInterface(false)
+        setShowDisplayFilesInterface(true)
         setShowButton(true)
 
         // handle files
@@ -65,7 +71,7 @@ function App() {
 
     return (
         <div className="app">
-            <h1 className='appTitle'>App</h1>
+            <h1 className='appTitle'>{'choose some files in which you want to remove EXIF data from :)'}</h1>
             {showImportingFilesInterface && <ImportingFilesInterface onImportFiles={ handleFileImport }/>}
             {showDisplayFilesInterface && <DisplayFilesInterface uploadedFiles={ files }/>}
             {showButton && <Button onClickProps={ handleButtonClick } text={ buttonText }/>}

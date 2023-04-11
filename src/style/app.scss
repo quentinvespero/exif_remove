@@ -2,7 +2,9 @@
     @include centerElement();
     flex-direction: column;
 }
+
 .appTitle{
     @include centerElement();
     flex-direction: column;
+    margin-bottom: 3rem;
 }
