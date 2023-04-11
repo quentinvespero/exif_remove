@@ -96,8 +96,8 @@ input{
     @include font(1.1rem,$color1,300,none);
     @include usualSpaces(1rem, 1rem, .8rem, .8rem);
     border-radius: .4rem;
-    background: $color5;
     border: none;
+    background: $color5;
     box-shadow: 0rem 0.4rem 0rem 0.5rem $color6;
     transition: ease-in-out .15s;
     cursor: pointer;

@@ -5,12 +5,44 @@
     border-radius: 1rem;
     background: $color4;
     transition: ease-in-out .15s;
+    box-shadow: 0rem 0rem 1rem .2rem $color2;
+    cursor: pointer;
 }
 .selectButton:hover{
     border: .2rem solid #ffffff48;
     background: #ffffff48;
     transform: scale(0.98);
+    box-shadow: 0rem 0rem 1rem .1rem $color2;
 }
 .selectButton:active{
     transform: scale(0.96);
+    box-shadow: 0rem 0rem 0rem 0rem $color2;
+}
+.selectButton::before{
+    align-self: center;
+    margin: 0rem 1rem;
+}
+
+.selectButton-selected::before{
+    content: url(../../assets/selectButton-selected.svg);
+}
+.selectButton-selected{
+    background: $color5 !important;
+    border: .2rem solid $color6 !important;
+}
+.selectButton-unselected{
+
+}
+.selectButton-unselected::before{
+    content: url(../../assets/selectButton-unselected.svg);
+}
+
+.checkboxSelectFile{
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    visibility: hidden;
+}
+.input:checked ~ *{
+    background: black;
 }

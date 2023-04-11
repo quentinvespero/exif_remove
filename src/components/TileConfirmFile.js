@@ -5,6 +5,19 @@ const TileConfirmFile = ({ file }) => {
     // creating a usable url to the uploaded file, to display the images
     const objectURL = URL.createObjectURL(file)
 
+    // cutting the file names that are too long
+    const shortenFileName = ((file.name),() => {
+
+        const fileName = file.name
+        const maxLength = 30
+
+        if (fileName.length > maxLength) {
+            const halfLength = maxLength / 2
+            return fileName.slice(0,halfLength)+'...'+fileName.slice(-halfLength)
+        }
+        return fileName
+    })
+
     return (
         <div className='tileConfirmFile'>
             
@@ -14,7 +27,7 @@ const TileConfirmFile = ({ file }) => {
                 : <div className='fileTypeOther'>
             </div>}
             <div className="fileInformations">
-                <p>{file.name}</p>
+                <p title={file.name}>{shortenFileName()}</p>
 
                 {/* // we convert the size from bytes to MB, while rounding the numbers with 2 numbers after comma */}
                 <p>{'last modifications : '+(file.lastModified)}</p>
